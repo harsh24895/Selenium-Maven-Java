@@ -2,6 +2,9 @@ import org.testng.annotations.*;
 
 public class DataAnnotationexample {
 
+    //if the method is set to private or other access modifier the test run will not show anything
+    //Same with default method means without the access modifier 
+
     @BeforeSuite
     public void beforesuite(){
         System.out.println("Chrome-setup property");
@@ -47,6 +50,8 @@ public class DataAnnotationexample {
         System.out.println("close Test application");
 
     }
+    
+    //this will run after test method
     @AfterMethod
     public void aftermethod() {
         System.out.println("Sign Out");

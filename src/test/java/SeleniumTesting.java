@@ -25,7 +25,7 @@ public class SeleniumTesting {
         options.addArguments("--remote-allow-origins=*");
         WebDriver webDriver = new ChromeDriver(options);*/
 
-        // in here we need to get the chromdriver intall
+        // in here we need to get the chromdriver install
         // so need to create a resources directory
         // in that put the chromedriver-win64 file
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/test/resources/chromedriver-win64/chromedriver.exe");
