@@ -12,6 +12,7 @@ import org.testng.asserts.SoftAssert;
 public class IntroAnnotation {
 
     public static WebDriver driver;
+    //Ch-6.3 softassert
     public static SoftAssert softAssert = new SoftAssert();
 
     @BeforeMethod
@@ -40,8 +41,6 @@ public class IntroAnnotation {
     }
     //Chapter6.3 soft assert
     // soft assert uses just 2 methods: assertAll(), doassert()
-
-
         @Test
         public void testHomePage2() {
             softAssert.assertEquals(true, true, "It works");
@@ -50,19 +49,26 @@ public class IntroAnnotation {
             softAssert.assertFalse(false, "Admin is not dispalyed on the page");
             System.out.println("Verify admin tab");
 
-            softAssert.assertTrue(true, "Dashboard is not correct on the Home page");
+            //you will see as this issue as it's expected True but condtion is false
+            softAssert.assertTrue(false, "Dashboard is not correct on the Home page");
             System.out.println("Verify Dashboard");
             //This need to put at end of the assert statements if we get error above statements it will store in assertAll()
             softAssert.assertAll();
         }
+        //HardAssert vs softassert
+        // We have to use as per the project Hard or Soft assert
+        // Hard assert: if its fail the test it will not execute the next statement
+        // Soft assert: This will execute the next statement if its fail inbetween
 
-//        //Chapter6.2 Hard assert
+
+
+//        //Chapter6.2 Hard assert with example
 //        @Test
 //        public void testHomePage() {
 //            Assert.assertEquals(true, true, "It works");
 //            System.out.println("Verify the web link");
 //
-//            Assert.assertFalse(false, "Admin is not dispalyed on the page");
+//            Assert.assertFalse(false, "Admin is not displayed on the page");
 //            System.out.println("Verify admin tab");
 //
 //            Assert.assertTrue(true, "Dashboard is not correct on the Home page");
